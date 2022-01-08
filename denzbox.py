@@ -97,13 +97,6 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 	await ctx.send(embed=embed)
 	print('[log] Command ban')
 	
-@client.command()
-async def banid(ctx, member: str, *, reason = None):
-	await ctx.guild.ban(member, reason=reason)
-	embed = discord.Embed(title="BanID", description=f"Member {member} was banned\nReason: {reason}", color=color)
-	await ctx.send(embed=embed)
-	print('[log] Command banid')
-	
 @client.command(aliases = ["nick"])
 async def nickname(ctx, member: discord.Member, *, nick):
 	await member.edit(nick=nick)
